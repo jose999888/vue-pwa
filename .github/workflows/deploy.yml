@@ -18,17 +18,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup Node.js
+      - name: Setup Node.js 20.19.2
         uses: actions/setup-node@v4
         with:
           node-version: '20.19.2'
-          cache: 'pnpm'
 
-      - name: Enable Corepack and prepare pnpm
+      - name: Enable Corepack and activate pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
-          pnpm --version
+          echo ">>> which pnpm: $(which pnpm || echo 'not found')"
+          pnpm --version || (echo "pnpm not available via corepack, falling back to global install" && npm install -g pnpm && pnpm --version)
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
