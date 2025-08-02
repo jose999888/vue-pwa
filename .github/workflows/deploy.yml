@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # 如果你的主分支不是 main，改成对应名字
+      - main
+
+permissions:
+  contents: write # 保证有权限推 gh-pages
 
 jobs:
   build-and-deploy:
@@ -33,7 +36,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v3.9.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
