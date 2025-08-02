@@ -3,31 +3,41 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # 你源代码的主分支
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false # 让 gh-pages action 能用自己的 token
+          persist-credentials: false # 让后面 gh-pages action 用自己的 token
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20.19.2'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
-      - name: Deploy
+      - name: Prepare 404 fallback
+        run: cp -f dist/index.html dist/404.html
+
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
           publish_branch: gh-pages
-          # 如果是子路径需要设置 cname 之类可选配置
+          publish_dir: ./dist
+          keep_files: false
