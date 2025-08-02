@@ -3,16 +3,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main # 如果你的主分支不是 main，改成对应名字
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false # 让后面 gh-pages action 用自己的 token
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -20,7 +21,7 @@ jobs:
           node-version: '20.19.2'
           cache: 'pnpm'
 
-      - name: Setup pnpm
+      - name: Enable and prepare pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
@@ -30,9 +31,6 @@ jobs:
 
       - name: Build
         run: pnpm run build
-
-      - name: Prepare 404 fallback
-        run: cp -f dist/index.html dist/404.html
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v6
