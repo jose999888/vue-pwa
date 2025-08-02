@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write # 保证有权限推 gh-pages
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -24,10 +24,11 @@ jobs:
           node-version: '20.19.2'
           cache: 'pnpm'
 
-      - name: Enable and prepare pnpm
+      - name: Enable Corepack and prepare pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
+          pnpm --version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
