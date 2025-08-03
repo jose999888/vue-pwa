@@ -7,5 +7,6 @@ const router = useRouter()
   <div>
     <h1>about</h1>
     <button @click="router.back()">返回</button>
+    <button @click="router.push('/')">去首页</button>
   </div>
 </template>
