@@ -1,1 +1,0 @@
-import{d as n,c as r,a as t,u as s,b as u,o as a}from"./index-CVyZA0Ch.js";const c=n({__name:"AppAbout",setup(l){const o=u();return(p,e)=>(a(),r("div",null,[e[1]||(e[1]=t("h1",null,"about",-1)),t("button",{onClick:e[0]||(e[0]=m=>s(o).back())},"返回")]))}});export{c as default};

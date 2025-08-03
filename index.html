@@ -5,29 +5,9 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index-CVyZA0Ch.js"></script>
+    <script type="module" crossorigin src="/assets/index-BgIBYhKT.js"></script>
   </head>
   <body>
     <div id="app"></div>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then((reg) => {
-          console.log(reg)
-
-          // // 监听新 SW 状态变化（可选用于 debug）
-          // reg.addEventListener('updatefound', () => {
-          //   const newWorker = reg.installing
-          //   console.log('发现新的 SW:', newWorker)
-          //   newWorker.addEventListener('statechange', () => {
-          //     console.log('新 SW state:', newWorker.state)
-          //   })
-          // })
-          // setInterval(() => {
-          //   navigator.serviceWorker.getRegistration().then((r) => r?.update())
-          // }, 60 * 1000)
-        })
-        console.log('🚀 ~ serviceWorker:注册成功')
-      }
-    </script>
   </body>
 </html>
