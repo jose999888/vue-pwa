@@ -9,9 +9,10 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
-    <script>
+    <script type="module">
+      const swUrl = `${import.meta.env.BASE_URL}sw.js`
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then((reg) => {
+        navigator.serviceWorker.register(swUrl).then((reg) => {
           console.log(reg)
 
           // // 监听新 SW 状态变化（可选用于 debug）
