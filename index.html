@@ -26,17 +26,17 @@
         navigator.serviceWorker.register(swUrl).then((reg) => {
           console.log(reg)
 
-          // // 监听新 SW 状态变化（可选用于 debug）
-          // reg.addEventListener('updatefound', () => {
-          //   const newWorker = reg.installing
-          //   console.log('发现新的 SW:', newWorker)
-          //   newWorker.addEventListener('statechange', () => {
-          //     console.log('新 SW state:', newWorker.state)
-          //   })
-          // })
-          // setInterval(() => {
-          //   navigator.serviceWorker.getRegistration().then((r) => r?.update())
-          // }, 60 * 1000)
+          // 监听新 SW 状态变化（可选用于 debug）
+          reg.addEventListener('updatefound', () => {
+            const newWorker = reg.installing
+            console.log('发现新的 SW:', newWorker)
+            newWorker.addEventListener('statechange', () => {
+              console.log('新 SW state:', newWorker.state)
+            })
+          })
+          setInterval(() => {
+            navigator.serviceWorker.getRegistration().then((r) => r?.update())
+          }, 60 * 1000)
         })
         console.log('🚀 ~ serviceWorker:注册成功')
       }
