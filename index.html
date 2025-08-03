@@ -42,9 +42,9 @@
           })
           // 加了reload 才会刷新内容和包，即使不刷新，也不会报错
           // 如果 改了js内容，且更新版本并且被检测到了，但是没有reload，是会js失效的，不是失效，是报错，所以就失效了
-          setInterval(() => {
-            navigator.serviceWorker.getRegistration().then((r) => r?.update())
-          }, 60 * 1000)
+          // setInterval(() => {
+          //   navigator.serviceWorker.getRegistration().then((r) => r?.update())
+          // }, 60 * 1000)
         })
       }
     </script>
