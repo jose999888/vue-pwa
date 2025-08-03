@@ -3,16 +3,17 @@
   "short_name": "vue-pwa",
   "start_url": "https://jose999888.github.io/vue-pwa/#/about",
   "display": "standalone",
+  "description": "这个是用来测试pwa安装的",
   "icons": [
     {
-      "src": "/pic2.webp",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "./pic2.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
     },
     {
-      "src": "/pic3.webp",
-      "type": "image/png",
-      "sizes": "1024x1024"
+      "src": "./pic3.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
     }
   ]
 }
