@@ -6,8 +6,8 @@ function reload() {
   location.reload()
 }
 function goToTarget() {
-  console.log('about')
-  alert('about')
+  console.log('🚀 ~ goToTarget ~ goToTarget:', goToTarget)
+  alert('aboutabout')
   router.push('/about')
 }
 </script>
