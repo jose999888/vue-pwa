@@ -1,0 +1,1 @@
+import{d as n,c as s,a as o,u,b as r,o as p}from"./index-rzAg9pRU.js";const f=n({__name:"AppHome",setup(l){const t=r();return(a,e)=>(p(),s("div",null,[e[1]||(e[1]=o("h1",null,"这个是AppHome页面",-1)),e[2]||(e[2]=o("h2",null,"这个是用来测试是否可以自动更新的",-1)),o("button",{onClick:e[0]||(e[0]=m=>u(t).push("/about"))},"切换页面")]))}});export{f as default};
