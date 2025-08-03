@@ -30,6 +30,7 @@
           reg.addEventListener('updatefound', () => {
             const newWorker = reg.installing
             console.log('发现新的 SW:', newWorker)
+            window.location.reload()
             newWorker.addEventListener('statechange', () => {
               console.log('新 SW state:', newWorker.state)
             })
