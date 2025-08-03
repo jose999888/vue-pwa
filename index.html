@@ -40,6 +40,7 @@
               // window.location.reload()
             })
           })
+          // 加了reload 才会刷新内容和包，即使不刷新，也不会报错
           setInterval(() => {
             navigator.serviceWorker.getRegistration().then((r) => r?.update())
           }, 60 * 1000)
