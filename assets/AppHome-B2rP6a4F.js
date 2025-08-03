@@ -1,1 +1,0 @@
-import{d as n,c as s,a as o,u as r,b as u,o as a}from"./index-BgIBYhKT.js";const f=n({__name:"AppHome",setup(p){const t=u();return(l,e)=>(a(),s("div",null,[e[1]||(e[1]=o("h1",null,"这个是AppHome页面",-1)),o("button",{onClick:e[0]||(e[0]=m=>r(t).push("/about"))},"切换页面")]))}});export{f as default};
