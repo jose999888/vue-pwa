@@ -1,0 +1,1 @@
+import{d as s,c as r,a as e,b as n,u as a,o as l}from"./index-Bbdruk3j.js";const m=s({__name:"AppAbout",setup(p){const o=a();return(b,t)=>(l(),r("div",null,[t[2]||(t[2]=e("h1",null,"about",-1)),e("button",{onClick:t[0]||(t[0]=u=>n(o).back())},"返回"),e("button",{onClick:t[1]||(t[1]=u=>n(o).push("/"))},"去首页")]))}});export{m as default};
