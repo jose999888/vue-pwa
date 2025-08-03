@@ -1,9 +1,11 @@
 {
+  "background": "#fff",
   "name": "my first vue pwa",
   "short_name": "vue-pwa",
   "start_url": "https://jose999888.github.io/vue-pwa/#/about",
   "display": "standalone",
   "description": "这个是用来测试pwa安装的",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "./pic2.webp",
